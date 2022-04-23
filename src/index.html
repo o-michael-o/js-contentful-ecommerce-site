@@ -30,7 +30,7 @@
     <header class="hero">
       <div class="banner">
         <h1 class="banner-title">Lorem, ipsum.</h1>
-        <button class="banner-btn">Lorem, ipsum.</button>
+        <button class="btn">Lorem, ipsum.</button>
       </div>
     </header>
 
@@ -54,6 +54,36 @@
         </article>
       </div>
     </section>
+
+    <!-- SHOPPING CART -->
+    <div class="cart-overlay">
+      <div class="cart">
+        <span class="close-cart">
+          <i class="fas fa-close"> </i>
+        </span>
+        <h2>Your Cart</h2>
+        <div class="cart-content">
+          <!-- ITEM -->
+          <div class="cart-item">
+            <img src="./images/product-1.jpeg" alt="product" />
+            <div>
+              <h4>Lorem</h4>
+              <h5>$10.00</h5>
+              <span class="remove-item">Remove</span>
+            </div>
+            <div>
+              <i class="fas fa-chevron-up"></i>
+              <p class="item-amount">1</p>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="cart-footer">
+          <h3>Total $ <span class="cart-total">0</span></h3>
+          <button class="clear-cart btn">Clear Cart</button>
+        </div>
+      </div>
+    </div>
 
     <script src="./scripts/app.js"></script>
   </body>
