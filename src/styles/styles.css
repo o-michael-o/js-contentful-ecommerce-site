@@ -174,6 +174,10 @@ body {
   visibility: hidden;
 }
 
+.transparentBcg {
+  visibility: visible;
+}
+
 .cart {
   position: fixed;
   top: 0;
@@ -192,12 +196,6 @@ body {
     width: 30vw;
     min-width: 450px;
   }
-}
-.cart .showCart {
-  transform: translateX(0);
-}
-.cart .transparentBcg {
-  visibility: visible;
 }
 .cart .close-cart {
   font-size: 1.7rem;
@@ -249,6 +247,10 @@ body {
 .cart-footer h3 {
   text-transform: capitalize;
   margin-bottom: 1rem;
+}
+
+.showCart {
+  transform: translateX(0);
 }
 
 /*# sourceMappingURL=styles.css.map */

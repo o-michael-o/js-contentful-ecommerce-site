@@ -104,6 +104,7 @@ class UI {
         this.addCartItem(newCartItem);
 
         // show cart and display overlay
+        // this.showCart();
       });
     });
   }
@@ -145,7 +146,40 @@ class UI {
     `;
 
     $cartContent.appendChild(div);
-    console.log($cartContent);
+    // console.log($cartContent);
+  }
+
+  showCart() {
+    // console.log("showCart");
+    $cartOverlay.classList.add("transparentBcg");
+    // console.log($cart);
+    $cart.classList.add("showCart");
+  }
+
+  closeCart() {
+    // console.log("showCart");
+    $cartOverlay.classList.remove("transparentBcg");
+    // console.log($cart);
+    $cart.classList.remove("showCart");
+  }
+
+  populateCart(cart) {
+    cart.forEach((item) => {
+      this.addCartItem(item);
+    });
+  }
+
+  startApp() {
+    // assign values from local storage to cart array
+    cart = LocalStorage.getCart();
+
+    // add to cart
+    this.setCartValues(cart);
+    this.populateCart(cart);
+
+    // add event listeners
+    $cartBtn.addEventListener("click", this.showCart);
+    $closeCartBtn.addEventListener("click", this.closeCart);
   }
 }
 
@@ -157,12 +191,18 @@ class LocalStorage {
 
   static getProduct(id) {
     let products = JSON.parse(localStorage.getItem("products"));
-    console.log(products);
+    // console.log(products);
     return products.find((product) => product.id === id);
   }
 
   static saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  static getCart() {
+    return localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
   }
 }
 
@@ -170,6 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // instantiate classes
   const ui = new UI();
   const products = new Products();
+
+  ui.startApp();
 
   // get all of the products
   products

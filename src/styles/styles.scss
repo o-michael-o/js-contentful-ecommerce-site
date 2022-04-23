@@ -203,6 +203,10 @@ body {
   visibility: hidden;
 }
 
+.transparentBcg {
+  visibility: visible;
+}
+
 .cart {
   position: fixed;
   top: 0;
@@ -219,14 +223,6 @@ body {
   @media screen and (min-width: 768px) {
     width: 30vw;
     min-width: 450px;
-  }
-
-  .showCart {
-    transform: translateX(0);
-  }
-
-  .transparentBcg {
-    visibility: visible;
   }
 
   .close-cart {
@@ -294,4 +290,8 @@ body {
       margin-bottom: 1rem;
     }
   }
+}
+
+.showCart {
+  transform: translateX(0);
 }
