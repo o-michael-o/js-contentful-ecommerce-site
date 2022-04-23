@@ -2,16 +2,13 @@
   "name": "js-contentful-ecommerce-site",
   "version": "1.0.0",
   "description": "",
-  "main": "src/scripts/index.js",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "start": "sass --watch src/styles/styles.scss src/styles/styles.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.5.0",
-    "parcel": "^2.5.0"
+    "sass": "^1.50.1"
   }
 }
