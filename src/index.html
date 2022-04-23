@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <title>JS Contentful E-Commerce</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles/styles.scss" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar-center">
+        <!-- <span class="navbar-icon"><i class="fas fa-bars"></i></span> -->
+        <img src="./images/logo.svg" alt="" />
+        <div class="cart-btn">
+          <span class="navbar-icon"><i class="fas fa-cart-plus"></i></span>
+          <div class="cart-items"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="banner">
+        <h1 class="banner-title">Lorem, ipsum.</h1>
+        <button class="banner-btn">Lorem, ipsum.</button>
+      </div>
+    </header>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products">
+      <div class="products-title">
+        <h2>Products</h2>
+      </div>
+      <div class="products-center">
+        <!-- PRODUCT -->
+        <article class="product">
+          <div class="img-container">
+            <img src="./images/product-1.jpeg" alt="" class="product-img" />
+            <button class="bag-btn" data-id="1">
+              <i class="fas fa-shopping-cart"></i>
+              add to cart
+            </button>
+          </div>
+          <h3>Lorem, ipsum.</h3>
+          <h4>$200</h4>
+        </article>
+      </div>
+    </section>
+
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>
