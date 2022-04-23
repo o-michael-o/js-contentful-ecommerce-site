@@ -101,6 +101,7 @@ class UI {
         this.setCartValues(cart);
 
         // display cart item
+        this.addCartItem(newCartItem);
 
         // show cart and display overlay
       });
@@ -120,11 +121,32 @@ class UI {
     $cartTotal.textContent = parseFloat(tempTotal.toFixed(2));
     $cartItems.textContent = itemsTotal;
 
-    console.log($cartTotal);
-    console.log($cartItems);
+    // console.log($cartTotal);
+    // console.log($cartItems);
   }
 
-  addToCart() {}
+  addCartItem(newCartItem) {
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `
+      <div class="cart-item">
+        <img src=${newCartItem.image} alt="product" />
+        <div>
+          <h4>${newCartItem.title}</h4>
+          <h5>$${newCartItem.price}</h5>
+          <span class="remove-item" data-id=${newCartItem.id}>Remove</span>
+        </div>
+        <div>
+          <i class="fas fa-chevron-up" data-id=${newCartItem.id}></i>
+          <p class="item-amount">${newCartItem.quantity}</p>
+          <i class="fas fa-chevron-down" data-id=${newCartItem.id}></i>
+        </div>
+      </div>
+    `;
+
+    $cartContent.appendChild(div);
+    console.log($cartContent);
+  }
 }
 
 // store in local storage
