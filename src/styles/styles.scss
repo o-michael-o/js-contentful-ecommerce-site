@@ -1,10 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+$rich-black-fogra-29: rgba(13, 24, 33, 1);
+$indigo-dye: rgba(52, 73, 102, 1);
+$light-steel-blue: rgba(180, 205, 237, 1);
+$baby-powder: rgba(240, 244, 239, 1);
+$sage: rgba(191, 204, 148, 1);
+$gradient: linear-gradient(170deg, #344966ff, #b4cdedff, #f0f4efff);
 
 :root {
-  --primaryColor: #f09d51;
-  --mainWhite: #fff;
-  --mainBlack: #222;
-  --mainGrey: #ececec;
+  /* CSS HSL */
+  // --rich-black-fogra-29: hsla(207, 43%, 9%, 1);
+  // --indigo-dye: hsla(215, 32%, 30%, 1);
+  // --light-steel-blue: hsla(214, 61%, 82%, 1);
+  // --baby-powder: hsla(108, 19%, 95%, 1);
+  // --sage: hsla(74, 35%, 69%, 1);
+
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s ease-in-out;
 }
@@ -15,10 +23,14 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: $indigo-dye;
+}
+
 body {
-  color: var(--mainBlack);
-  background: var(--mainWhite);
-  font-family: "Lato", sans-serif;
+  color: $rich-black-fogra-29;
+  font-family: "Radio Canada", sans-serif;
 }
 
 .btn {
@@ -26,15 +38,16 @@ body {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   font-size: 1rem;
-  background: var(--primaryColor);
-  color: var(--mainBlack);
-  border: 1px solid var(--primaryColor);
+  background: $indigo-dye;
+  color: $baby-powder;
+  border: 2px solid $indigo-dye;
   transition: var(--mainTransition);
   cursor: pointer;
 
   &:hover {
-    background: transparent;
-    color: var(--primaryColor);
+    background: $light-steel-blue;
+    color: $indigo-dye;
+    border: 2px solid $indigo-dye;
   }
 }
 
@@ -47,7 +60,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgb(231, 226, 221);
+  background: $indigo-dye;
   z-index: 1;
 
   &-center {
@@ -58,6 +71,10 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
+
+    img {
+      width: 7rem;
+    }
   }
 
   &-icon {
@@ -74,25 +91,29 @@ body {
       position: absolute;
       top: -8px;
       right: -8px;
-      background: var(--primaryColor);
+      background: $sage;
       padding: 0 5px;
       border-radius: 30%;
-      color: var(--mainWhite);
+      color: $baby-powder;
     }
   }
 }
 
 // HERO SECTION
 .hero {
+  // Photo by Jeremy Bishop (https://unsplash.com/photos/KFIjzXYg1RM) on Unsplash
+  background: url("../images/hero.jpeg") center/cover no-repeat;
+
   min-height: calc(100vh - 60px);
-  background: url("../images/hero-bcg.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: grayscale(0.4);
+  filter: brightness(0.9);
 
   .banner {
     text-align: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba($color: $baby-powder, $alpha: 0.8);
     display: inline-block;
     padding: 2rem;
 
@@ -109,6 +130,7 @@ body {
 
 .products {
   padding: 4rem 0;
+  background: $gradient;
 
   &-title h2 {
     text-align: center;
@@ -123,7 +145,7 @@ body {
     margin: 0 auto;
     max-width: 1170px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
 
@@ -136,7 +158,7 @@ body {
       position: absolute;
       top: 70%;
       right: 0;
-      background: var(--primaryColor);
+      background: $sage;
       border: none;
       text-transform: uppercase;
       padding: 0.5rem 0.75rem;
@@ -162,8 +184,18 @@ body {
     .product-img {
       display: block;
       width: 100%;
-      min-height: 12rem;
+      object-fit: cover;
+      height: 20rem;
+
       transition: var(--mainTransition);
+
+      @media screen and (max-width: 768px) {
+        height: 15rem;
+      }
+
+      @media screen and (max-width: 768px) {
+        height: 20rem;
+      }
     }
 
     .img-container:hover .product-img {
@@ -182,7 +214,7 @@ body {
       h4 {
         margin-top: 0.7rem;
         letter-spacing: var(--mainSpacing);
-        color: var(--primaryColor);
+        color: $indigo-dye;
         text-align: center;
       }
     }
@@ -198,7 +230,7 @@ body {
   width: 100%;
   height: 100%;
   transition: var(--mainTransition);
-  background: rgb(240, 157, 81, 0.5);
+  background: rgba($color: $sage, $alpha: 0.5);
   z-index: 5;
   visibility: hidden;
 }
@@ -257,6 +289,7 @@ body {
     img {
       width: 75px;
       height: 75px;
+      object-fit: cover;
     }
 
     h4 {

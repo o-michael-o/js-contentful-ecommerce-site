@@ -4,21 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
-    <title>JS Contentful E-Commerce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shoppy</title>
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/styles.scss" />
+
+    <!-- Contentful Object -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"
+      defer
+    ></script>
+    <script src="./scripts/app.js" type="module" defer></script>
   </head>
   <body>
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="navbar-center">
         <!-- <span class="navbar-icon"><i class="fas fa-bars"></i></span> -->
-        <img src="./images/logo.svg" alt="" />
+        <img src="./images/logo.png" alt="" />
         <div class="cart-btn">
           <span class="navbar-icon"><i class="fas fa-cart-plus"></i></span>
           <div class="cart-items"></div>
@@ -29,13 +44,13 @@
     <!-- HERO SECTION -->
     <header class="hero">
       <div class="banner">
-        <h1 class="banner-title">Lorem, ipsum.</h1>
-        <button class="btn">Lorem, ipsum.</button>
+        <h1 class="banner-title">Save online</h1>
+        <a href="#products"><button class="btn">Show products</button></a>
       </div>
     </header>
 
     <!-- PRODUCTS SECTION -->
-    <section class="products">
+    <section class="products" id="products">
       <div class="products-title">
         <h2>Products</h2>
       </div>
@@ -86,9 +101,5 @@
         </div>
       </div>
     </div>
-
-    <!-- Contentful Object -->
-    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
-    <script src="./scripts/app.js"></script>
   </body>
 </html>
